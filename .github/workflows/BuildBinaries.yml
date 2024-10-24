@@ -26,7 +26,7 @@ jobs:
     - name: Clear local NuGet cache (workaround for failed restores on windows-latest)
       run: dotnet nuget locals all --clear
     - name: Build
-      run: msbuild BuildAllTargets.proj
+      run: msbuild -property:Configuration=debug BuildAllTargets.proj
     - uses: actions/upload-artifact@v4
       with:
         name: Mile.Xaml_CI_Build
